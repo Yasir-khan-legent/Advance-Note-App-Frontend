@@ -1,0 +1,365 @@
+/* overall page layout */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background:#2C3E50
+}
+.login-btn
+{
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+/* sidebar style desktop */
+.sidebar {
+  width: 210px;
+  background:#2C3E50;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  padding:10px 10px;
+  transition: 0.3s;
+}
+
+/* ===================== LOGO ===================== */
+.slogo{
+color: #ffffff;
+font-size: 25px;
+font-weight: 700;
+}
+.logo span{
+  font-size: 39px;
+  font-weight: 600;
+}
+
+
+/* ===================== MENU ===================== */
+.menu {
+  margin-top: 40px;
+  list-style: none;
+  padding:0;
+
+}
+.menu li {
+  font-size: 17px;
+  font-weight: 500;
+  padding:10px 8px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  border-radius:8px;
+  transition:.2s;
+  color: #ffffff;
+   position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+
+}
+.menu li i{
+  font-size:24px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.menu li:hover{
+  background:#96979636;
+    transition: 0.25s ease;
+    
+
+}
+
+.nav-link.active li {
+  background: rgba(255,255,255,0.12);
+  transform: translateX(2px);
+}
+
+.nav-link.active li i {
+  color: #1abc9c;
+}
+/* ===================== PROFILE ===================== */
+.profile {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  /* padding:7px 0; */
+  border-top:1px solid #ffffff;
+  padding-top: 10px;
+}
+.profile i{
+ font-size: 30px;
+ color: #ffffff;
+
+}
+.profile p{
+    font-size: 17px;
+  font-weight:600;
+  color:#ffffff;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+.main-content {
+  flex-grow:1;
+  padding:0px;
+}
+.mainlogo{
+    text-align: center;
+     font-size: 42px;
+     color: #ffffff;
+     padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff;
+
+}
+.maindiv{
+  display: flex;
+  
+}
+
+/* =========================================================
+   📱 Responsive Mobile View
+   Sidebar bottom nav style
+========================================================= */
+
+
+
+
+
+
+/* Mobile devices (up to 768px) */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: 65px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Mobile logo styling */
+  .mainlogo {
+    display: none;
+  }
+
+  /* Mobile menu styling */
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  .menu li {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 5px;
+    margin-top: 0;
+    font-size: 12px;
+    gap: 5px;
+    background: transparent;
+    width: auto;
+    flex: 1;
+  }
+
+  .menu li i {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .menu li span {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .nav-link {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-link.active li {
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
+  }
+
+  /* Hide profile section on mobile */
+  .profile {
+    display: none;
+  }
+
+  /* Main content area spacing for mobile */
+  .main-content {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 75px; /* Space for bottom navbar */
+  }
+}
+
+/* Small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 8px 10px;
+    height: 60px;
+  }
+
+  .menu li {
+    padding: 6px 3px;
+    font-size: 11px;
+  }
+
+  .menu li i {
+    font-size: 18px;
+  }
+
+  .menu li span {
+    font-size: 10px;
+  }
+
+  .main-content {
+    padding: 12px;
+    margin-bottom: 70px;
+  }
+}
+
+/* Extra small mobile devices (up to 320px) */
+@media (max-width: 320px) {
+  .sidebar {
+    padding: 6px 8px;
+    height: 55px;
+  }
+
+  .menu li {
+    padding: 5px 2px;
+  }
+
+  .menu li i {
+    font-size: 16px;
+  }
+
+  .menu li span {
+    font-size: 9px;
+    display: block;
+  }
+
+  .main-content {
+    padding: 10px;
+    margin-bottom: 65px;
+  }
+}
+
+/* Touch-friendly elements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .menu li {
+    min-height: 50px;
+    min-width: 50px;
+    padding: 10px 5px;
+  }
+
+  .nav-link {
+    min-height: 50px;
+  }
+}
+
+/* Active state improvements for mobile */
+@media (max-width: 768px) {
+  .nav-link.active li {
+    border-radius: 8px;
+  }
+
+  .nav-link.active li i {
+    color: #1abc9c;
+  }
+}
+
+/* For tablets (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .menu li {
+    font-size: 15px;
+    padding: 8px 6px;
+  }
+
+  .menu li i {
+    font-size: 22px;
+  }
+
+  .slogo {
+    font-size: 22px;
+  }
+
+  .mainlogo span {
+    font-size: 35px;
+  }
+}
+
+/* Ensure menu items don't wrap */
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: nowrap;
+  }
+  
+  .nav-link {
+    overflow: hidden;
+  }
+}
+
+/* Mobile header if needed */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #2C3E50;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 999;
+  }
+
+  .mobile-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .mobile-header .logo i {
+    font-size: 24px;
+  }
+
+  /* Add margin to main content to account for fixed header */
+  .main-content {
+    margin-top: 60px;
+  }
+}

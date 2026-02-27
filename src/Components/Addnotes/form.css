@@ -1,0 +1,203 @@
+
+
+.form-container1{
+    display: flex;
+
+    align-items: center;
+    margin-top: 30px;
+}
+.back-div{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+  
+}
+.back{
+    padding: 3px 28px ;
+    background-color: #2C3E50; 
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.notetitle{
+    padding: 8px 15px;
+    font-size: 20px;
+    width: 500px;
+    border: 2px solid #2C3E50;
+    color: black;
+}
+.notetitle::placeholder {
+    color: #4e4b4b;
+    font-size: 18px;
+    font-weight: 600;
+}
+.text-main{
+   
+    margin-top: 20px;
+}
+.text-main h1{
+margin-top: 20px;
+    font-size: 28px;
+font-weight: 550;
+}
+
+
+
+
+
+.notearea {
+    width: 1200px;
+    height: 30vh;      /* apni requirement ke hisaab se badha sakte ho */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 2px;
+/* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    background-color: white;
+    border: none;
+  resize: none;
+    outline: none;
+    
+    transition: 0.3s;
+}
+
+/* Focus effect (jab click ho) */
+.notearea:focus {
+    border-color: #000000;
+    /* box-shadow: 0 0 5px rgba(161, 161, 161, 0.4); */
+}
+
+/* Placeholder style */
+.notearea::placeholder {
+    color: #2c2b2b;
+    font-size: 18px;
+}
+
+.ntag{
+   font-size: 20px;
+    font-weight: 600;
+    color: rgb(97, 95, 95);
+margin-top: 20px;
+}
+.taginput{
+    width: 300px;
+    padding: 5px 15px;
+    font-size: 17px;
+   border: none;
+   background: #ffffff;
+    color: black;
+    margin-left: 20px;
+}
+.tag-div{
+    margin-top: 30px ;
+    align-items: center;
+   
+}
+
+
+
+
+
+
+
+
+
+
+.status-box{
+  margin-top: 15px;
+}
+
+.status-label{
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.status-options{
+  display: flex;
+  gap: 20px;
+  background: #ffffff;
+  padding: 10px 15px;
+  border-radius: 0px;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+
+.status-options label{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.status-options input[type="radio"]{
+  width: 15px;
+  height: 15px;
+}
+
+
+
+
+
+.status-select-box{
+  margin-top: 15px;
+}
+
+.status-select-label{
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.status-select{
+  width: 200px;
+  padding: 10px;
+  border-radius: 0px;
+
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+  background: #ffffff;
+}
+
+.status-select:focus{
+  /* border-color: #4a90e2; */
+  /* box-shadow: 0px 0px 5px rgba(0,122,255,0.4); */
+}
+
+.bottom-div{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.botton-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+.cancel{
+    padding: 5px 25px ;
+    background-color: #e4e3e3; 
+    color: rgb(95, 94, 94);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    margin-right: 20px;
+}
+.add{
+     padding: 5px 25px ;
+    background-color: #2C3E50; 
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    margin-right: 20px;
+}

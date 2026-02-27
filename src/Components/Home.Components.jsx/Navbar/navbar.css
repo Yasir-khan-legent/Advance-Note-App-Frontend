@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  /* White - Pure background */
+  --color-background: #FFFFFF;
+  
+  /* Dark Gray - Text ke liye. Yeh #000000 (Pure Black) se zyada naram (sober) hai. */
+  --color-text-main: #333333;
+  
+  /* Sober Navy Blue - Headings, buttons, aur highlights ke liye. */
+  --color-accent: #2C3E50;
+  
+  /* Aap Secondary Text (jaise date/time) ke liye medium gray bhi add kar sakte hain. */
+  --color-text-secondary: #888888;
+}
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f3f3;
+
+      /* background: linear-gradient(to right, #22c55e, #14b8a6); */
+
+
+
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 800;
+    box-shadow: 0 2px 4px rgba(107, 105, 105, 0.1);
+}
+.logo{
+color: #2C3E50;
+}
+.logo span{
+  font-size: 37px;
+}
+
+.links button{
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  border: none;
+  padding: 5px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+.links{
+  display: flex;
+  align-items: center;
+  gap : 30px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.mlogin{
+  display: none;
+}
+
+
+
+
+
+
+
+
+

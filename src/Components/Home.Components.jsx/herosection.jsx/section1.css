@@ -1,0 +1,157 @@
+.main{
+    padding: 50px 180px;
+    text-align: center;
+    width: 100%;
+}
+.main h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 900;
+}
+.main p{
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #666;
+    margin-top: 15px;
+}
+.main button{
+    padding: 10px 40px;
+    font-size: 18px;
+    color: #fff;
+    background-color:#2C3E50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.main button:hover{
+    background-color: #555;
+}
+.main span{
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #666666;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+/* Mobile devices (up to 768px) */
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 40px 30px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .main h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    
+    .main p {
+        font-size: 18px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+    
+    .main button {
+        padding: 14px 35px;
+        font-size: 18px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .main span {
+        font-size: 16px;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+}
+
+/* Small mobile devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .main {
+        padding: 30px 20px;
+    }
+    
+    .main h1 {
+        font-size: 28px;
+        margin-bottom: 18px;
+        line-height: 1.4;
+    }
+    
+    .main p {
+        font-size: 16px;
+        margin-bottom: 22px;
+        line-height: 1.7;
+    }
+    
+    .main button {
+        padding: 14px 30px;
+        font-size: 17px;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .main span {
+        font-size: 15px;
+        margin-top: 18px;
+    }
+}
+
+/* Extra small mobile devices (up to 320px) */
+@media screen and (max-width: 320px) {
+    .main {
+        padding: 25px 15px;
+    }
+    
+    .main h1 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    .main p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
+    
+    .main button {
+        padding: 12px 25px;
+        font-size: 16px;
+        max-width: 250px;
+    }
+    
+    .main span {
+        font-size: 14px;
+        margin-top: 16px;
+    }
+}
+
+/* Ensure button text is properly styled */
+.main button a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+/* Make buttons touch-friendly on mobile */
+@media (hover: none) and (pointer: coarse) {
+    .main button {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

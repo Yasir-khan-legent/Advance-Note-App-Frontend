@@ -1,0 +1,361 @@
+.auth-head{
+    text-align: center;
+margin-top: 20px;
+font-size: 50px;
+font-weight: 800;
+}
+.signupmain{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+.container{
+    width: 450px;
+    border: 1px solid lightgray;
+    padding: 20px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.container h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #000000;
+}
+.container h2{
+    text-align: center;
+   
+    font-size: 70px;
+    font-weight: 600;
+    color: #002435;
+}
+.barmain{
+    display: flex;
+ justify-content: center;
+ margin-top: 20px;
+}
+.bar{
+    background-color: #002435; ;
+    width: 40%;
+    height: 2vh;
+}
+
+
+
+
+.form-row{
+  margin-bottom:14px;
+}
+
+.form-label{
+  display:block;
+  font-weight:600;
+  margin-bottom:8px;
+  color:#111827;
+  font-size:14px;
+}
+
+.form-input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:var(--input-bg);
+  outline: none;
+  transition: box-shadow .15s, border-color .15s;
+  font-size:14px;
+  color:#0f172a;
+}
+
+.form-input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(22,163,74,0.08);
+}
+
+.form-help{
+  margin-top:6px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.input-with-btn{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.show-btn{
+  padding:8px 10px;
+  border-radius:5px;
+  border:1px solid #e2e8f0;
+  background:white;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.show-btn:hover{ background:#f1f5f9; }
+
+.form-actions{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
+}
+
+.submit-btn1{
+  background:  #002435;
+  color:white;
+  padding:8px 16px;
+  border-radius:5px;
+  border:none;
+  cursor:pointer;
+  width: 100%;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(23,163,78,0.18);
+}
+.submit-btn:hover{ transform: translateY(-1px); transition: .12s; }
+.already{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+/* Mobile devices (up to 768px) */
+@media screen and (max-width: 768px) {
+    .auth-head {
+        font-size: 35px;
+        margin-top: 15px;
+        padding: 0 20px;
+    }
+    
+    .auth-head span {
+        font-size: 35px;
+    }
+    
+    .barmain {
+        margin-top: 15px;
+    }
+    
+    .bar {
+        width: 60%;
+        height: 1.5vh;
+    }
+    
+    .signupmain {
+        padding: 15px;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 25px 20px;
+        margin: 0 15px;
+    }
+    
+    .container h1 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    
+    .container h2 {
+        font-size: 55px;
+        margin-bottom: 10px;
+    }
+    
+    .form-row {
+        margin-bottom: 16px;
+    }
+    
+    .form-input {
+        padding: 12px 14px;
+        font-size: 16px; /* iOS zoom issue ko fix karne ke liye */
+    }
+    
+    .submit-btn {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+    
+    .already {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
+/* Small mobile devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .auth-head {
+        font-size: 30px;
+        margin-top: 12px;
+        padding: 0 15px;
+    }
+    
+    .auth-head span {
+        font-size: 30px;
+    }
+    
+    .bar {
+        width: 70%;
+        height: 1.2vh;
+    }
+    
+    .container {
+        padding: 22px 18px;
+        margin: 0 10px;
+        max-width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+    
+    .container h1 {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+    
+    .container h2 {
+        font-size: 50px;
+    }
+    
+    .form-input {
+        padding: 11px 13px;
+        font-size: 15px;
+    }
+    
+    .show-btn {
+        padding: 10px 12px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .submit-btn {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+    
+    .already {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+}
+
+/* Extra small mobile devices (up to 320px) */
+@media screen and (max-width: 320px) {
+    .auth-head {
+        font-size: 26px;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    
+    .auth-head span {
+        font-size: 26px;
+    }
+    
+    .bar {
+        width: 80%;
+        height: 1vh;
+    }
+    
+    .container {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+    
+    .container h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .container h2 {
+        font-size: 45px;
+    }
+    
+    .form-label {
+        font-size: 13px;
+    }
+    
+    .form-input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .form-help {
+        font-size: 11px;
+    }
+    
+    .submit-btn {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+    
+    .already {
+        font-size: 13px;
+    }
+}
+
+/* Touch-friendly elements for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .form-input,
+    .show-btn,
+    .submit-btn {
+        min-height: 44px;
+    }
+    
+    .show-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .submit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Form input focus for mobile */
+@media screen and (max-width: 768px) {
+    .form-input:focus {
+        box-shadow: 0 0 0 3px rgba(0, 36, 53, 0.1);
+    }
+}
+
+/* Link styling */
+.already a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Prevent zoom on iOS for inputs */
+@media screen and (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Better spacing for mobile forms */
+@media screen and (max-width: 768px) {
+    .form-row {
+        margin-bottom: 18px;
+    }
+    
+    .form-help {
+        margin-top: 8px;
+    }
+}
+
+/* Container box shadow for mobile - lighter version */
+@media screen and (max-width: 480px) {
+    .container {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;
+    }
+}

@@ -1,0 +1,290 @@
+.main2{
+width: 100%;
+padding: 10px 0px;
+}
+.main2 h1{
+    color: #333; ;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 900;
+}
+.cardcontainer{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding: 50px 0px;
+}
+.card{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 260px;
+  
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.main2 h2{
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+.main2 h3{
+    color:#333;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+.main2 p{
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.box{
+width: 100%;
+padding: 20px 80px;
+}
+.mainbox{
+    width: 100%;
+    background-color: #2C3E50;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 20px;
+    text-align: center;
+}
+.mainbox h1{
+    color: #fff; ;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 900;
+}
+.mainbox p{
+    color: #ddd;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 10px;
+}
+.mainbox button{
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.copyright{
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    padding: 15px 0px;
+}
+
+
+
+
+
+/* Mobile devices (up to 768px) */
+@media screen and (max-width: 768px) {
+    .main2 h1 {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+    
+    .cardcontainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 30px 20px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    
+    .card h3 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .card h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    .card p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .box {
+        padding: 20px;
+    }
+    
+    .mainbox {
+        padding: 30px 20px;
+        margin: 0 auto;
+    }
+    
+    .mainbox h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .mainbox p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+    
+    .mainbox button {
+        padding: 14px 25px;
+        font-size: 1.1rem;
+        width: 100%;
+        max-width: 250px;
+        margin-top: 25px;
+    }
+}
+
+/* Small mobile devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .main2 h1 {
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+    
+    .cardcontainer {
+        gap: 20px;
+        padding: 25px 15px;
+    }
+    
+    .card {
+        max-width: 100%;
+        padding: 18px;
+    }
+    
+    .card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .card p {
+        font-size: 0.95rem;
+    }
+    
+    .box {
+        padding: 15px;
+    }
+    
+    .mainbox {
+        padding: 25px 15px;
+    }
+    
+    .mainbox h1 {
+        font-size: 1.6rem;
+    }
+    
+    .mainbox p {
+        font-size: 1rem;
+    }
+    
+    .mainbox button {
+        padding: 12px 20px;
+        font-size: 1rem;
+        max-width: 220px;
+    }
+}
+
+/* Extra small mobile devices (up to 320px) */
+@media screen and (max-width: 320px) {
+    .main2 h1 {
+        font-size: 1.6rem;
+        padding: 0 10px;
+    }
+    
+    .cardcontainer {
+        padding: 20px 10px;
+        gap: 18px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .card h2 {
+        font-size: 1.1rem;
+    }
+    
+    .mainbox h1 {
+        font-size: 1.5rem;
+    }
+    
+    .mainbox p {
+        font-size: 0.95rem;
+    }
+    
+    .mainbox button {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+        max-width: 200px;
+    }
+}
+
+/* Copyright section responsive */
+@media screen and (max-width: 768px) {
+    .copyright {
+        padding: 15px 20px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+}
+
+/* Make buttons touch-friendly on mobile */
+@media (hover: none) and (pointer: coarse) {
+    .mainbox button {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Ensure links are properly styled */
+.mainbox button a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Card hover effects removed for mobile (better performance) */
+@media (hover: none) and (pointer: coarse) {
+    .card {
+        transition: none;
+    }
+}

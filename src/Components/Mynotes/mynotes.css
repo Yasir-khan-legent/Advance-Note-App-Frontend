@@ -1,0 +1,78 @@
+.header{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.mysearch{
+    width: 900px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+     display: -webkit-box;
+  -webkit-line-clamp: 1;   /* kitni lines dikhani hain */
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+.mysearch:focus{
+    outline: none;
+    border: 2px solid #2C3E50;
+}
+.btns{
+    display: flex;
+    gap: 10px;
+}
+.btns button{
+    padding: 5px 20px;
+    border: none;
+    background-color:#2C3E50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.card-container{
+   
+    display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+        padding: 40px 0px;
+                  height: 74vh;
+padding-bottom: 20px;
+padding-right: 20px;
+  overflow-y: auto;         
+  overflow-x: hidden;
+
+  z-index: 1000;
+}
+.crud-btn{
+    display: flex;
+    gap: 10px;
+}
+.crud-btn button{
+    padding: 5px 10px;
+    border: none;
+    background-color:#34495E;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.tag{
+      background-color: #66666634;
+    padding: 2px 8px;
+    font-size: 13px;
+    border-radius: 10px;
+    color: #333333;
+}
+
+.Nofound{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
