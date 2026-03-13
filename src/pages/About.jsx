@@ -8,7 +8,9 @@ function About() {
       {/* Back to Home Button */}
       <div className="back-home-container">
         <Link to="/" className="back-home-button">
-          <span className="back-arrow">←</span> Home Page
+          <span className="back-arrow">←</span> 
+          <span className="home-text">Home Page</span>
+          <span className="home-icon">🏠</span>
         </Link>
       </div>
 

@@ -1,79 +1,189 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-  /* White - Pure background */
-  --color-background: #FFFFFF;
-  
-  /* Dark Gray - Text ke liye. Yeh #000000 (Pure Black) se zyada naram (sober) hai. */
-  --color-text-main: #333333;
-  
-  /* Sober Navy Blue - Headings, buttons, aur highlights ke liye. */
-  --color-accent: #2C3E50;
-  
-  /* Aap Secondary Text (jaise date/time) ke liye medium gray bhi add kar sakte hain. */
-  --color-text-secondary: #888888;
+    --color-background: #FFFFFF;
+    --color-text-main: #333333;
+    --color-accent: #2C3E50;
+    --color-text-secondary: #888888;
 }
-body{
+
+body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f3f3;
-
-      /* background: linear-gradient(to right, #22c55e, #14b8a6); */
-
-
-
 }
-.navbar{
+
+/* Navbar Styles */
+.navbar {
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: #ffffff;
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 20px;
     color: rgb(0, 0, 0);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 800;
     box-shadow: 0 2px 4px rgba(107, 105, 105, 0.1);
-}
-.logo{
-color: #2C3E50;
-}
-.logo span{
-  font-size: 37px;
+    position: relative;
 }
 
-.links button{
-  background-color: #2C3E50;
-  color: #FFFFFF;
-  border: none;
-  padding: 5px 20px;
-  margin-left: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background-color 0.3s ease;
-  font-weight: 600;
-}
-.links{
-  display: flex;
-  align-items: center;
-  gap : 30px;
-  font-size: 16px;
-  font-weight: 600;
-}
-.mlogin{
-  display: none;
+/* Logo Styles */
+.logo {
+    color: #2C3E50;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: clamp(16px, 4vw, 25px);
+    white-space: nowrap;
 }
 
+.logo span {
+    font-size: clamp(24px, 6vw, 37px);
+    display: inline-flex;
+    align-items: center;
+}
 
+/* Links Container */
+.links {
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 3vw, 30px);
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 600;
+}
 
+/* Link Styles */
+.links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
 
+.links a:hover {
+    color: #2C3E50;
+}
 
+/* Desktop Login Button */
+.links button {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: clamp(13px, 2vw, 15px);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
 
+.links button:hover {
+    background-color: #1a2632;
+}
 
+.links button a {
+    color: white;
+    text-decoration: none;
+}
 
+/* Mobile Login Icon */
+.mlogin {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #2C3E50;
+    padding: 8px;
+}
 
+/* Hamburger Menu (Add this if you want mobile menu) */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #2C3E50;
+}
+
+/* Tablet Styles (768px and below) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .links {
+        gap: 15px;
+    }
+
+    /* Hide text in login button on tablet, show only icon */
+    .links button span {
+        display: none;
+    }
+    
+    .links button {
+        padding: 8px 12px;
+    }
+    
+    .links button i {
+        margin: 0;
+    }
+}
+
+/* Mobile Styles (640px and below) */
+@media screen and (max-width: 640px) {
+    .navbar {
+        padding: 0 12px;
+        height: 55px;
+    }
+
+    /* Hide all links except login on mobile */
+    .links a:not(:last-child) {
+        display: none;
+    }
+
+    /* Show mobile login icon, hide desktop button */
+    .links button {
+        display: none;
+    }
+
+    .mlogin {
+        display: block;
+    }
+
+    /* Adjust logo size for mobile */
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo span {
+        font-size: 28px;
+    }
+}
+
+/* Small Mobile Styles (380px and below) */
+@media screen and (max-width: 380px) {
+    .logo {
+        font-size: 16px;
+    }
+
+    .logo span {
+        font-size: 24px;
+    }
+
+    .mlogin {
+        font-size: 18px;
+    }
+}
+
+/* Optional: Add smooth transitions */
+.navbar, .logo, .links, .links a, .links button {
+    transition: all 0.3s ease;
+}
