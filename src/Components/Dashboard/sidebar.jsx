@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Sidebar.css";
+import "./sidebar.css";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { Getname } from "../../Service/Api";
 import { isAuthenticated } from "../../Service/Auth.api";
