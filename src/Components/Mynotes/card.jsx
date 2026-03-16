@@ -3,7 +3,7 @@ import { getusernotes } from "./CardData.js";
 import img from "../images/Notfound.png";
 import { Deletenotes } from "../../Service/Api.js";
 import { Link, useLocation } from "react-router-dom";
-import './Mynotes.css';
+import './mynotes.css';
 
 function Card({ notes, setNotes, setEditingNote, setshow, refresh }) {
   const location = useLocation();

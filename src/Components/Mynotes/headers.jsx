@@ -2,7 +2,7 @@ import React from 'react';
 import { DeleteAllnotes } from '../../Service/Api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Mynotes.css';
+import './mynotes.css';
 
 function Headers({ setshow, setEditingNote, notes }) {
   async function confirmDelete(closeToast) {
