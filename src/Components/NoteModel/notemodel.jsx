@@ -2,102 +2,127 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getnote } from "../../Service/Api";
+import "./notemodel.css";
 
 function Noteshow() {
   const [note, setNote] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-    const location = useLocation();
-
+  const location = useLocation();
   const { id } = useParams();
+
   function pagechnge() {
-    const from = location.state?.from || "/dashboard"; 
+    const from = location.state?.from || "/dashboard";
     navigate(from);
   }
 
   useEffect(() => {
     async function fetchNote() {
-      const res = await getnote(id);
-      console.log('data fetch',res)
-      setNote(res.data);
+      try {
+        setLoading(true);
+        const res = await getnote(id);
+        console.log('data fetch', res);
+        setNote(res.data);
+      } catch (error) {
+        console.error("Error fetching note:", error);
+      } finally {
+        setLoading(false);
+      }
     }
     fetchNote();
   }, [id]);
 
-  if (!note) return <p>Loading...</p>;
-  const notes =
-    "React Router ka jo error tumhein mil raha hai “No routes matched location” asal mein is baat ki taraf ishara karta hai ke browser jis URL par ja raha hai us URL ke liye React Router ko koi matching route mila hi nahi. Tumhare case mein tumne App.jsx mein /dashboard ke andar do sibling routes banaye hue hain: ek mynotes aur doosra notemodel، iska matlab yeh hai ke valid URLs sirf /dashboard/mynotes aur /dashboard/notemodel hain، jab ke /dashboard/mynotes/notemodel naam ka koi route tumne define hi nahi kiya. Lekin jab tum Mynotes page se ya kisi aur jagah se notemodel ko relative path ke zariye open karte ho، to React Router automatically usay current URL ke sath jor deta hai، jis ki wajah se URL /dashboard/mynotes/notemodel ban jata hai، aur kyun ke aisa koi route exist nahi karta is liye error aa jata hai. Is maslay ka seedha aur sahi hal yeh hai ke agar NoteModel dashboard ka alag, independent page hai to usay absolute path ke sath open karo jaise /dashboard/notemodel، aur agar tum chahte ho ke NoteModel logically Mynotes ka child ho to phir routes ko nested banana hoga aur Mynotes component ke andar <Outlet /> lagana zaroori hoga. Asal rule yeh hai ke React Router mein route ka structure aur URL ka structure bilkul match karna chahiye؛ jahan parent–child relationship hoti hai wahan <Outlet /> hota hai، aur jahan routes sibling hotay hain wahan navigation hamesha full ya absolute path ke sath ki jati hai، warna router confuse ho jata hai aur yahi error show karta hai۔";
+  if (loading) {
+    return (
+      <div className="noteshow-loading">
+        <div className="loading-spinner"></div>
+        <p>Loading note...</p>
+      </div>
+    );
+  }
+
+  if (!note) {
+    return (
+      <div className="noteshow-error">
+        <i className="fa-regular fa-circle-exclamation"></i>
+        <p>Note not found</p>
+        <button onClick={pagechnge} className="error-back-btn">
+          <i className="fa-solid fa-arrow-left"></i> Go Back
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <div className="overlay">
-      <div className="main-container">
-        <button className="close-btn" onClick={pagechnge}>
-          <i class="fa-solid fa-xmark"></i>
+    <div className="noteshow-overlay">
+      <div className="noteshow-container">
+        <button className="noteshow-close-btn" onClick={pagechnge}>
+          <i className="fa-solid fa-xmark"></i>
         </button>
 
-        <div className="headingmain">
-          <h1 className="noteheading">
-            <i className="fa-solid fa-book-open-reader"></i> {note.title.length > 30
-                  ? note.title.slice(0, 30) + "..."
-                  : note.title}
-            <span className="notetag">#{note.tag.length > 10
-                  ? note.tag.slice(0, 10) + "..."
-                  : note.tag}</span>
+        <div className="noteshow-header">
+          <h1 className="noteshow-title">
+            <i className="fa-solid fa-book-open-reader"></i> 
+            {note.title.length > 40 ? note.title.slice(0, 40) + "..." : note.title}
+            {note.tag && (
+              <span className="noteshow-tag">
+                #{note.tag.length > 15 ? note.tag.slice(0, 15) + "..." : note.tag}
+              </span>
+            )}
           </h1>
 
-          <div className="status-main">
-            <div className={note.status === 'completed' ? 'status-l' : 'status-l-p'}>
-              <h1 >
-                {note.status === 'pending' ? (
-    <>
-      <i className="fa-solid fa-hourglass-half"></i> Pending
-    </>
-  ) : (
-    <>
-      <i className="fa-regular fa-circle-check"></i> Completed
-    </>
-  )}
-              </h1>
+          <div className="noteshow-status">
+            <div className={`status-badge ${note.status === 'completed' ? 'status-completed' : 'status-pending'}`}>
+              {note.status === 'pending' ? (
+                <>
+                  <i className="fa-solid fa-hourglass-half"></i> Pending
+                </>
+              ) : (
+                <>
+                  <i className="fa-regular fa-circle-check"></i> Completed
+                </>
+              )}
             </div>
-            <div className="status-r">
-              <h1>
-                 {note.isprivate  ? (
-    <>
-      <i class="fa-solid fa-eye-slash"></i> Private
-    </>
-  ) : (
-    <>
-    <i class="fa-solid fa-eye"></i> Public
-    </>
-  )}
-              </h1>
+            <div className={`status-badge ${note.isprivate ? 'status-private' : 'status-public'}`}>
+              {note.isprivate ? (
+                <>
+                  <i className="fa-solid fa-eye-slash"></i> Private
+                </>
+              ) : (
+                <>
+                  <i className="fa-solid fa-eye"></i> Public
+                </>
+              )}
             </div>
           </div>
         </div>
 
-        <p>{note.note}</p>
+        <div className="noteshow-content">
+          <p className="noteshow-note">{note.note}</p>
+        </div>
 
-       <div className="notemodel-like">
-         <h2 className="date">CreatedBy : <i class="fa-regular fa-circle-user"></i>  {note.Createdby?.name?.length > 15
-    ? note.Createdby.name.slice(0, 15) + "..."
-    : note.Createdby?.name}</h2>
+        <div className="noteshow-footer">
+          <div className="noteshow-author">
+            <i className="fa-regular fa-circle-user"></i>
+            <span>
+              {note.Createdby?.name?.length > 20
+                ? note.Createdby.name.slice(0, 20) + "..."
+                : note.Createdby?.name || "Anonymous"}
+            </span>
+          </div>
 
-    <div className="note-likemain">
-  <div className="likes">
-                <i className="fa-solid fa-thumbs-up"></i>
-                <span>{note.likes.length}</span>
-                <span> - Likes</span>
-              </div>
-               <div className="likes">
-                <i className="fa-solid fa-thumbs-up"></i>
-                <span>{note.dislike.length}</span>
-                <span> - DisLikes</span>
-              </div>
-    </div>
-       </div>
-
-   
+          <div className="noteshow-reactions">
+            <div className="reaction-item">
+              <i className="fa-solid fa-thumbs-up"></i>
+              <span>{note.likes.length}</span>
+            </div>
+            <div className="reaction-item">
+              <i className="fa-solid fa-thumbs-down"></i>
+              <span>{note.dislike?.length || 0}</span>
+            </div>
+          </div>
+        </div>
       </div>
-       
     </div>
   );
 }

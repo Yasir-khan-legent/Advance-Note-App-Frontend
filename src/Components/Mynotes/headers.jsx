@@ -1,9 +1,10 @@
-import React from 'react'
-import { DeleteAllnotes, Usernotes } from '../../Service/Api';
+import React from 'react';
+import { DeleteAllnotes } from '../../Service/Api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Mynotes.css';
 
-function Headers({ setshow, setEditingNote,notes }) {
+function Headers({ setshow, setEditingNote, notes }) {
   async function confirmDelete(closeToast) {
     await DeleteAllnotes();
     closeToast();
@@ -13,18 +14,13 @@ function Headers({ setshow, setEditingNote,notes }) {
   function deletenotes() {
     toast(
       ({ closeToast }) => (
-        <div>
+        <div className="delete-confirm">
           <p>Are you sure you want to delete all notes?</p>
-
-          <div style={{ marginTop: "10px", color:"green", }}>
-            <button onClick={() => confirmDelete(closeToast)}>
+          <div className="delete-actions">
+            <button onClick={() => confirmDelete(closeToast)} className="confirm-yes">
               Yes
             </button>
-
-            <button
-              onClick={closeToast}
-              style={{ marginLeft: "10px",color:"red" }}
-            >
+            <button onClick={closeToast} className="confirm-no">
               Cancel
             </button>
           </div>
@@ -32,34 +28,56 @@ function Headers({ setshow, setEditingNote,notes }) {
       ),
       { autoClose: false }
     );
-  
   }
 
   return (
-    <div>
+    <div className="headers-wrapper">
       <div className='header'>
-        <input type="text" className='mysearch' placeholder='Search Notes' />
+        <div className="search-wrapper">
+          <input 
+            type="text" 
+            className='mysearch' 
+            placeholder='Search Notes...' 
+          />
+          <button className="search-btn">Search</button>
+        </div>
 
         <div className='btns'>
-          <button>Search</button>
-
-          <button onClick={() => {
-            setshow(true);
-            setEditingNote(null);
-          }}>
-            New <i className="fa-solid fa-plus"></i>
+          <button 
+            className="new-note-btn"
+            onClick={() => {
+              setshow(true);
+              setEditingNote(null);
+            }}
+          >
+            <span>New</span>
+            <i className="fa-solid fa-plus"></i>
           </button>
 
-          <button onClick={deletenotes}>
-            Reset <i className="fa-solid fa-arrow-rotate-right"></i>
+          <button 
+            className="reset-btns"
+            onClick={deletenotes}
+          >
+            <span>Reset</span>
+            <i className="fa-solid fa-arrow-rotate-right"></i>
           </button>
         </div>
       </div>
 
-      {/* MUST RENDER THIS */}
-      <ToastContainer />
+      <ToastContainer 
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
-  )
+  );
 }
 
-export default Headers
+export default Headers;

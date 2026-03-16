@@ -11,14 +11,14 @@ function Addnotes({ setshow, editingNote, setEditingNote, setRefresh }) {
         {/* <button className='back' onClick={()=>setshow(false)}><i class="fa-solid fa-chevron-left"></i>Back</button> */}
       </div>
 
-      <div className="form-container">
+      {/* <div className="form-container"> */}
         <Form
           setshow={setshow}
           editingNote={editingNote}
           setEditingNote={setEditingNote}
           setRefresh={setRefresh}
         />
-      </div>
+      {/* </div> */}
     </div>
   );
 }

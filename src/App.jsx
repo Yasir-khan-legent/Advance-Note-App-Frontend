@@ -69,7 +69,7 @@ const [loading, setLoading] = useState(true);
     element={
       // <PrivateRoute>
         <Dashboard />
-      // </PrivateRoute>
+      //  </PrivateRoute>
     }
   >
     <Route index element={<DashboardHome />} />

@@ -35,14 +35,22 @@ function Navbar() {
                     <Link to='/contact'>Contact</Link>
 
                     {/* Desktop Login Button */}
-                    <button>
-                        <i className="fa-solid fa-right-to-bracket"></i>
-                        <span> Login</span>
-                        <Link to='/login' style={{ display: 'none' }}></Link>
-                    </button>
+                   <Link to='/login' className='login-button'>
+  <button>
+    <i className="fa-solid fa-right-to-bracket"></i>
+    <span> Login</span>
+  </button>
+</Link>
 
+                     {/* Mobile Notes Icon */}
+    <span className='mnotes'>
+        <Link to='/dashboard'>
+            <i className="fa-solid fa-note-sticky"></i>
+        </Link>
+    </span>
                     {/* Mobile Login Icon */}
                     <span className='mlogin'>
+                   
                         <Link to='/login'>
                             <i className="fa-solid fa-right-to-bracket"></i>
                         </Link>

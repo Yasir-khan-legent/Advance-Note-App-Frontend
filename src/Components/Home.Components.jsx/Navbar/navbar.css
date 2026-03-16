@@ -85,6 +85,13 @@ body {
     gap: 8px;
     white-space: nowrap;
 }
+.mnotes {
+    display: none; /* default hidden */
+    font-size: 18px;
+    cursor: pointer;
+    color: #2C3E50;
+    padding: 8px;
+}
 
 .links button:hover {
     background-color: #1a2632;
@@ -118,6 +125,9 @@ body {
         padding: 0 15px;
         height: 60px;
     }
+      .mnotes {
+        display: block; /* show only on mobile */
+    }
 
     .links {
         gap: 15px;
@@ -142,6 +152,9 @@ body {
     .navbar {
         padding: 0 12px;
         height: 55px;
+    }
+      .mnotes {
+        display: block; /* show only on mobile */
     }
 
     /* Hide all links except login on mobile */
@@ -176,6 +189,9 @@ body {
 
     .logo span {
         font-size: 24px;
+    }
+      .mnotes {
+        display: block; /* show only on mobile */
     }
 
     .mlogin {

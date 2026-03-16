@@ -1,203 +1,543 @@
+/* Main Container */
+.addnotes-containers {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-.form-container1{
+/* Back Button Section */
+.back-div {
     display: flex;
-
+    justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
 }
-.back-div{
-    display: flex;
-   justify-content: space-between;
-   align-items: center;
-  
+
+.form-title {
+    font-size: clamp(20px, 4vw, 28px);
+    color: #2C3E50;
+    font-weight: 700;
+    margin: 0;
 }
-.back{
-    padding: 3px 28px ;
-    background-color: #2C3E50; 
+
+.back {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #2C3E50, #34495e);
     color: white;
-    border-radius: 4px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-}
-.notetitle{
-    padding: 8px 15px;
-    font-size: 20px;
-    width: 500px;
-    border: 2px solid #2C3E50;
-    color: black;
-}
-.notetitle::placeholder {
-    color: #4e4b4b;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
-}
-.text-main{
-   
-    margin-top: 20px;
-}
-.text-main h1{
-margin-top: 20px;
-    font-size: 28px;
-font-weight: 550;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
 }
 
+.back:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
 
+/* Title Input */
+.title-wrapper {
+    margin-bottom: 20px;
+}
 
+.notetitle {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: clamp(16px, 3vw, 20px);
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    color: #2C3E50;
+    transition: all 0.3s ease;
+    background: white;
+}
 
+.notetitle:focus {
+    outline: none;
+    border-color: #2C3E50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.notetitle::placeholder {
+    color: #adb5bd;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: 400;
+}
+
+/* Tag Section */
+.tag-div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ntag {
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 600;
+    color: #2C3E50;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.ntag i {
+    color: #3498db;
+}
+
+.taginput {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px 15px;
+    font-size: clamp(14px, 2.5vw, 17px);
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    color: #2C3E50;
+    transition: all 0.3s ease;
+}
+
+.taginput:focus {
+    outline: none;
+    border-color: #2C3E50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.taginput::placeholder {
+    color: #adb5bd;
+}
+
+/* Note Textarea */
+.text-main {
+    margin-bottom: 20px;
+}
+
+.text-main h1 {
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 600;
+    color: #2C3E50;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-main h1 i {
+    color: #3498db;
+}
 
 .notearea {
-    width: 1200px;
-    height: 30vh;      /* apni requirement ke hisaab se badha sakte ho */
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 2px;
-/* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    width: 100%;
+    min-height: 200px;
+    max-height: 400px;
+    padding: 15px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     background-color: white;
-    border: none;
-  resize: none;
+    resize: vertical;
     outline: none;
-    
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    color: #2C3E50;
+    line-height: 1.6;
 }
 
-/* Focus effect (jab click ho) */
 .notearea:focus {
-    border-color: #000000;
-    /* box-shadow: 0 0 5px rgba(161, 161, 161, 0.4); */
+    border-color: #2C3E50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
 }
 
-/* Placeholder style */
 .notearea::placeholder {
-    color: #2c2b2b;
-    font-size: 18px;
+    color: #adb5bd;
+    font-size: clamp(13px, 2.2vw, 16px);
 }
 
-.ntag{
-   font-size: 20px;
+/* Bottom Section - Status Options */
+.bottom-div {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.status-box,
+.status-select-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.status-label,
+.status-select-label {
+    font-size: clamp(16px, 3vw, 23px);
     font-weight: 600;
-    color: rgb(97, 95, 95);
-margin-top: 20px;
-}
-.taginput{
-    width: 300px;
-    padding: 5px 15px;
-    font-size: 17px;
-   border: none;
-   background: #ffffff;
-    color: black;
-    margin-left: 20px;
-}
-.tag-div{
-    margin-top: 30px ;
-    align-items: center;
-   
-}
-
-
-
-
-
-
-
-
-
-
-.status-box{
-  margin-top: 15px;
-}
-
-.status-label{
-  font-size: 23px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.status-options{
-  display: flex;
-  gap: 20px;
-  background: #ffffff;
-  padding: 10px 15px;
-  border-radius: 0px;
-  width: fit-content;
-  align-items: center;
-  border: 1px solid #ddd;
-}
-
-.status-options label{
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.status-options input[type="radio"]{
-  width: 15px;
-  height: 15px;
-}
-
-
-
-
-
-.status-select-box{
-  margin-top: 15px;
-}
-
-.status-select-label{
-  font-size: 23px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.status-select{
-  width: 200px;
-  padding: 10px;
-  border-radius: 0px;
-
-  outline: none;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s;
-  background: #ffffff;
-}
-
-.status-select:focus{
-  /* border-color: #4a90e2; */
-  /* box-shadow: 0px 0px 5px rgba(0,122,255,0.4); */
-}
-
-.bottom-div{
+    color: #2C3E50;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 8px;
 }
-.botton-btn{
+
+.status-label i,
+.status-select-label i {
+    color: #3498db;
+}
+
+.status-options {
+    display: flex;
+    gap: 20px;
+    background: #f8f9fa;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    flex-wrap: wrap;
+}
+
+.status-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: clamp(13px, 2.2vw, 15px);
+    color: #2C3E50;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.status-options label:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.status-options label.active {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+}
+
+.status-options input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #2C3E50;
+}
+
+.status-options i {
+    font-size: 14px;
+}
+
+.status-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    font-size: clamp(14px, 2.5vw, 15px);
+    background: white;
+    color: #2C3E50;
+    transition: all 0.3s ease;
+}
+
+.status-select:focus {
+    border-color: #2C3E50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.status-select option {
+    padding: 10px;
+}
+
+/* Action Buttons */
+.botton-btn {
     width: 100%;
     display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cancel,
+.add {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: clamp(14px, 2.5vw, 15px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
     align-items: center;
-    justify-content: end;
-    
+    gap: 8px;
 }
-.cancel{
-    padding: 5px 25px ;
-    background-color: #e4e3e3; 
-    color: rgb(95, 94, 94);
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-    border: none;
-    margin-right: 20px;
+
+.cancel {
+    background: #e9ecef;
+    color: #2C3E50;
 }
-.add{
-     padding: 5px 25px ;
-    background-color: #2C3E50; 
-    color: rgb(255, 255, 255);
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-    border: none;
-    margin-right: 20px;
+
+.cancel:hover {
+    background: #dee2e6;
+    transform: translateY(-2px);
+}
+
+.add {
+    background: linear-gradient(135deg, #2C3E50, #34495e);
+    color: white;
+}
+
+.add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.cancel i,
+.add i {
+    font-size: 14px;
+}
+
+/* ===================== RESPONSIVE BREAKPOINTS ===================== */
+
+/* Large Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .addnotes-container {
+        max-width: 95%;
+        padding: 20px;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .addnotes-containers {
+        padding: 15px;
+    }
+
+    .bottom-div {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .status-box,
+    .status-select-box {
+        width: 100%;
+    }
+
+    .status-options {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .button-group {
+        width: 100%;
+    }
+
+    .cancel,
+    .add {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .addnotes-containers {
+        padding: 12px;
+        margin: 10px;
+    }
+
+    .back-div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .back {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tag-div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .taginput {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .notearea {
+        min-height: 150px;
+    }
+
+    .status-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .status-options label {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .botton-btn {
+        justify-content: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .cancel,
+    .add {
+        width: 100%;
+        padding: 12px;
+        justify-content: center;
+    }
+}
+
+/* Extra Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+    .addnotes-container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+
+    .notetitle {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .ntag {
+        font-size: 14px;
+    }
+
+    .taginput {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .text-main h1 {
+        font-size: 18px;
+    }
+
+    .notearea {
+        min-height: 120px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .status-label,
+    .status-select-label {
+        font-size: 16px;
+    }
+
+    .status-options label {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .status-select {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .cancel,
+    .add {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .notearea {
+        min-height: 100px;
+        max-height: 200px;
+    }
+
+    .addnotes-container {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .cancel:hover,
+    .add:hover,
+    .back:hover,
+    .status-options label:hover {
+        transform: none;
+    }
+
+    .cancel:active,
+    .add:active,
+    .back:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Animation for form elements */
+.notetitle,
+.taginput,
+.notearea,
+.status-select,
+.status-options label,
+.cancel,
+.add,
+.back {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.notetitle { animation-delay: 0.1s; }
+.tag-div { animation: fadeInUp 0.5s ease 0.2s forwards; opacity: 0; }
+.text-main { animation: fadeInUp 0.5s ease 0.3s forwards; opacity: 0; }
+.bottom-div { animation: fadeInUp 0.5s ease 0.4s forwards; opacity: 0; }
+.botton-btn { animation: fadeInUp 0.5s ease 0.5s forwards; opacity: 0; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

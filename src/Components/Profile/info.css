@@ -1,8 +1,7 @@
-.profile-main{
+/* Profile Main Container */
+.profile-main {
     width: 100%;
-    
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     margin-top: 20px;
     background-color: white;
@@ -10,135 +9,429 @@
     color: black;
     border: none;
     border-radius: 10px;
-    padding: 20px 20px;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
+
+/* Profile Image */
 .img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background-color: #2C3E50;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 60px;
-  color: white;
-  font-weight: 500;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #2C3E50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: white;
+    font-weight: 500;
+    flex-shrink: 0;
 }
 
+/* User Info Section */
 .user {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 2px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 2px 20px;
+    flex: 1;
+    min-width: 250px;
 }
 
 .user h1 {
-  font-size: 30px;
-  font-weight: 600;
-  margin: 0;
-  color: #2c3e50;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    color: #2c3e50;
+    word-break: break-word;
 }
-.user h2{
-      font-size: 20px;
-  color: #7f8c8d;
-  font-weight: 600;
+
+.user h2 {
+    font-size: 20px;
+    color: #7f8c8d;
+    font-weight: 600;
+    margin: 0;
+    word-break: break-word;
 }
 
 .user span {
-  font-size: 17px;
-  color: #7f8c8d;
-  font-weight: 600;
+    font-size: 17px;
+    color: #7f8c8d;
+    font-weight: 600;
+    display: inline-block;
 }
 
-
-.profile-btn{
-
-    height: 18vh;
-    width: 60%;
+/* Profile Buttons Container */
+.profile-btn {
+    height: auto;
+    min-height: 18vh;
+    width: auto;
+    min-width: 300px;
     text-align: end;
-   align-content: end;
+    align-content: end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
 }
-.logout{
+
+/* Button Styles */
+.logout,
+.delte {
     margin-top: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.logout {
     background-color: #ecebeb;
     color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
-    font-weight: 600;
-}
-.delte{
-      margin-top: 20px;
-    background-color: #fc00005b;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
-    font-weight: 600;
 }
 
-.main2p{
+.logout:hover {
+    background-color: #d5d5d5;
+    transform: translateY(-2px);
+}
+
+.delte {
+    background-color: #fc00005b;
+    color: rgb(0, 0, 0);
+}
+
+.delte:hover {
+    background-color: #fc000080;
+    transform: translateY(-2px);
+}
+
+/* Stats Container */
+.main2p {
     margin-top: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-
+/* Stat Card */
 .total {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-background-color: #2c3e50e8;
-  color: white;
-
-  padding: 10px 24px;
-  border-radius: 14px;
-  min-width: 320px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #2c3e50e8;
+    color: white;
+    padding: 15px 24px;
+    border-radius: 14px;
+    min-width: 280px;
+    flex: 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
 }
 
-/* ICON */
-.total > div:first-child {
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+.total:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(44, 62, 80, 0.2);
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Icon Container */
+.total > div:first-child {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .total i {
-  font-size: 32px;
-  color: white;
+    font-size: 32px;
+    color: white;
 }
 
-/* TEXT */
+/* Text Container */
+.total > div:last-child {
+    flex: 1;
+}
+
 .total h1 {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 700;
-  opacity: 0.9;
-  color: white;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    opacity: 0.9;
+    color: white;
 }
 
 .total h2 {
-  font-size: 30px;
-  margin: 0px 0 0;
-  font-weight: 700;
-  color: #1abc9c;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+    color: #1abc9c;
+    line-height: 1;
 }
 
+/* ===================== RESPONSIVE BREAKPOINTS ===================== */
 
+/* Large Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .total {
+        min-width: 240px;
+        padding: 12px 20px;
+    }
+    
+    .total > div:first-child {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .total i {
+        font-size: 28px;
+    }
+    
+    .total h2 {
+        font-size: 26px;
+    }
+}
 
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .profile-main {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+    
+    .user {
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+    
+    .profile-btn {
+        width: 100%;
+        justify-content: center;
+        min-height: auto;
+    }
+    
+    .logout,
+    .delte {
+        margin: 0 5px;
+    }
+    
+    .main2p {
+        flex-direction: column;
+    }
+    
+    .total {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Small Mobile Devices (600px and below) */
+@media (max-width: 600px) {
+    .img {
+        width: 130px;
+        height: 130px;
+        font-size: 48px;
+    }
+    
+    .user h1 {
+        font-size: 26px;
+    }
+    
+    .user h2 {
+        font-size: 18px;
+    }
+    
+    .user span {
+        font-size: 15px;
+    }
+    
+    .profile-btn {
+        /* flex-direction: column; */
+        align-items: center;
+    }
+    
+    .logout,
+    .delte {
+        width: 200px;
+        margin: 5px 0;
+        white-space: normal;
+    }
+    
+    .total {
+        padding: 12px 15px;
+    }
+    
+    .total > div:first-child {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .total i {
+        font-size: 24px;
+    }
+    
+    .total h1 {
+        font-size: 18px;
+    }
+    
+    .total h2 {
+        font-size: 24px;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .profile-main {
+        padding: 20px 10px;
+    }
+    
+    .img {
+        width: 110px;
+        height: 110px;
+        font-size: 42px;
+    }
+    
+    .user h1 {
+        font-size: 22px;
+    }
+    
+    .user h2 {
+        font-size: 16px;
+    }
+    
+    .user span {
+        font-size: 14px;
+    }
+    
+    .logout,
+    .delte {
+        width: 180px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .total {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .total > div:first-child {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+    
+    .total h1 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .total h2 {
+        font-size: 26px;
+    }
+}
+
+/* Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+    .img {
+        width: 90px;
+        height: 90px;
+        font-size: 36px;
+    }
+    
+    .user h1 {
+        font-size: 20px;
+    }
+    
+    .user h2 {
+        font-size: 14px;
+    }
+    
+    .user span {
+        font-size: 12px;
+    }
+    
+    .logout,
+    .delte {
+        width: 150px;
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+    
+    .total > div:first-child {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .total i {
+        font-size: 22px;
+    }
+    
+    .total h1 {
+        font-size: 16px;
+    }
+    
+    .total h2 {
+        font-size: 22px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .profile-main {
+        padding: 15px;
+    }
+    
+    .img {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+    
+    .profile-btn {
+        min-height: auto;
+    }
+    
+    .main2p {
+        margin-top: 15px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .logout:hover,
+    .delte:hover,
+    .total:hover {
+        transform: none;
+    }
+    
+    .logout:active,
+    .delte:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .profile-btn {
+        display: none;
+    }
+    
+    .profile-main {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
